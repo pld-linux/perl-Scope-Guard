@@ -1,20 +1,19 @@
 #
 # Conditional build:
-%bcond_without	autodeps	# don't BR packages needed only for resolving deps
 %bcond_without	tests		# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Scope
 %define	pnam	Guard
 Summary:	Scope::Guard - lexically scoped resource management
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	Scope::Guard - zarządzanie zasobami o zakresie leksykalnym
 Name:		perl-Scope-Guard
 Version:	0.03
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/C/CH/CHOCOLATE/Scope-Guard-0.03.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/C/CH/CHOCOLATE/Scope-Guard-%{version}.tar.gz
 # Source0-md5:	a33ab0a31d837b94797e61050afff894
 URL:		http://search.cpan.org/dist/Scope-Guard/
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -23,11 +22,12 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module provides a convenient way to perform cleanup or other forms
-of resource management at the end of a scope.
+This module provides a convenient way to perform cleanup or other
+forms of resource management at the end of a scope.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+Ten moduł udostępnia wygodny sposób wykonywania czyszczenia i innych
+form zarządzania zasobami poza zakresem ich widoczności.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
