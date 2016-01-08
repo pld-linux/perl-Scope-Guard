@@ -8,13 +8,13 @@
 Summary:	Scope::Guard - lexically scoped resource management
 Summary(pl.UTF-8):	Scope::Guard - zarządzanie zasobami o zakresie leksykalnym
 Name:		perl-Scope-Guard
-Version:	0.20
+Version:	0.21
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Scope/CHOCOLATE/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	495d5ae16a2df8128fd068c386c9d4ac
+Source0:	http://www.cpan.org/modules/by-module/Scope/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	be57b915d23ddac7677ef2ad9e52b92a
 URL:		http://search.cpan.org/dist/Scope-Guard/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -51,6 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
-%{perl_vendorlib}/Scope
+%dir %{perl_vendorlib}/Scope
 %{perl_vendorlib}/Scope/Guard.pm
 %{_mandir}/man3/Scope::Guard.3pm*
